@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://b6i4rt4vf0omm"]
+
+[ext_resource type="Texture2D" uid="uid://qs3fhk08ru7o" path="res://assests/background-purple.png" id="1_8u835"]
+[ext_resource type="Script" uid="uid://cb0p1s5mfnul7" path="res://game_over.gd" id="1_ftari"]
+[ext_resource type="Texture2D" uid="uid://dcua6n21vko1u" path="res://assests/planets/planet6.png" id="2_ftari"]
+[ext_resource type="Texture2D" uid="uid://brvwwd02j3c5e" path="res://assests/planets/planet1.png" id="3_28vn7"]
+[ext_resource type="Texture2D" uid="uid://2o1nnle2lhcs" path="res://assests/planets/planet3.png" id="4_k2vha"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fkf4o"]
+font_size = 46
+font_color = Color(0.54508436, 0.4503904, 0.5776229, 1)
+
+[node name="GameOver" type="Control" unique_id=1479816463]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ftari")
+
+[node name="Label" type="Label" parent="." unique_id=1480322201]
+top_level = true
+layout_mode = 0
+offset_top = 97.0
+offset_right = 394.0
+offset_bottom = 223.0
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_fkf4o")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackgroundPurple" type="Sprite2D" parent="." unique_id=1213982926]
+position = Vector2(202, 302)
+scale = Vector2(1, 1.495)
+texture = ExtResource("1_8u835")
+
+[node name="Button" type="Button" parent="." unique_id=411154547]
+process_mode = 3
+layout_mode = 0
+offset_left = 63.0
+offset_top = 303.0
+offset_right = 334.0
+offset_bottom = 399.0
+focus_mode = 0
+text = "Try Again"
+
+[node name="Planet6" type="Sprite2D" parent="." unique_id=110164347]
+position = Vector2(394, 516)
+texture = ExtResource("2_ftari")
+
+[node name="Planet1" type="Sprite2D" parent="." unique_id=1810032003]
+position = Vector2(-2, 99)
+texture = ExtResource("3_28vn7")
+
+[node name="Planet3" type="Sprite2D" parent="." unique_id=535842697]
+position = Vector2(35, 560)
+scale = Vector2(3.296875, 3.046875)
+texture = ExtResource("4_k2vha")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

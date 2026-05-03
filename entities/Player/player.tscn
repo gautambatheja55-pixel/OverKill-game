@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bgi0008h36e0y"]
+
+[ext_resource type="Texture2D" uid="uid://kjo6rhq06b4o" path="res://assests/pixel_ship_yellow.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://br84l2wcc74cs" path="res://entities/Player/player.gd" id="1_s65uf"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_s65uf"]
+lifetime_randomness = 0.45
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+sub_emitter_mode = 4
+sub_emitter_amount_at_start = 1
+
+[node name="Player" type="Node2D" unique_id=1505990125]
+script = ExtResource("1_s65uf")
+
+[node name="Ship_Sprite" type="Sprite2D" parent="." unique_id=1440253299]
+position = Vector2(7.1054274e-15, -1.9073486e-06)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_4flbx")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=2043708738]
+position = Vector2(0, 16)
+amount = 13
+lifetime = 2.53
+randomness = 0.35
+process_material = SubResource("ParticleProcessMaterial_s65uf")

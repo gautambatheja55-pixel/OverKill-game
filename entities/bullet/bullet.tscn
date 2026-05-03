@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bocda6av1fhda"]
+
+[ext_resource type="Script" uid="uid://cpt581l2jbbrh" path="res://entities/bullet/bullet.gd" id="1_2kyv7"]
+[ext_resource type="Texture2D" uid="uid://dxrxk64d3lcjx" path="res://assests/pixel_laser_yellow.png" id="1_78c8h"]
+[ext_resource type="AudioStream" uid="uid://buemibb672mhs" path="res://assests/Sounds/Explosion.mp3" id="3_5h0jh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78c8h"]
+size = Vector2(10, 30)
+
+[node name="bullet" type="Node2D" unique_id=521417102]
+script = ExtResource("1_2kyv7")
+
+[node name="PixelLaserYellow" type="Sprite2D" parent="." unique_id=497378776]
+texture = ExtResource("1_78c8h")
+
+[node name="bullet_area" type="Area2D" parent="." unique_id=759567675]
+position = Vector2(56, 34)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet_area" unique_id=200715270]
+position = Vector2(-56, -36)
+shape = SubResource("RectangleShape2D_78c8h")
+
+[node name="Explosion" type="AudioStreamPlayer2D" parent="." unique_id=1778461790]
+stream = ExtResource("3_5h0jh")
